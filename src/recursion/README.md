@@ -1,43 +1,43 @@
-Time and Space Complexity Analysis
-Code Recap:
-The code generates all subsequences of the input array using recursion. It includes or excludes each element at each index and prints the subsequences.
-
 Time Complexity:
+The time complexity for printing all subsequences of an array is determined by the number of possible subsequences.
 
-Number of Subsequences:
+## Number of Subsequences:
 
-For an array of size n, there are 2^n possible subsequences.
-This is because for each element, we can either:
-Include it in the subsequence, or
+For an array of size n, the number of subsequences is 2^n. This is because for each element, we have two choices:
+Include it in the subsequence.
 Exclude it from the subsequence.
-Thus, for n elements, we have 2^n different combinations (subsequences).
+Hence, the total number of subsequences is 2^n.
 Operations Per Recursive Call:
 
-In each recursive call, we either add an element to the list or remove it.
-These operations take constant time O(1) (adding or removing an element at the end of the list).
+Each recursive call performs constant time operations (O(1)) for adding or removing an element in the subsequence.
 Total Time Complexity:
 
-Since there are 2^n possible subsequences and each subsequence requires constant time operations to be formed and printed, the total time complexity is:
-O(2^n) where n is the size of the array.
+Since there are 2^n possible subsequences and each subsequence takes constant time to form and print, the total time complexity is:
+scss
+Copy
+Edit
+O(2^n)
 Space Complexity:
+The space complexity is determined by the space used for the result list (which stores the current subsequence) and the recursive call stack.
 
-Space for Result List:
+Space for the Result List:
 
-The list result stores the current subsequence, which can have at most n elements (in the case of the full subsequence).
-The space used by result is O(n) at any given time.
-Recursive Call Stack:
+At any given time, the result list stores a subsequence. The maximum size of the list is n (when we store the entire array as a subsequence).
+Thus, the space used by the result list is O(n).
+Space for the Recursive Call Stack:
 
-Each recursive call adds a new entry to the call stack. The depth of the recursion is equal to n because we are making one recursive call for each element in the array.
-In the worst case, the recursion depth will be n, meaning the call stack will take O(n) space.
+The maximum depth of the recursion is n, since we make one recursive call for each element in the array.
+Therefore, the space used by the recursive call stack is O(n).
 Total Space Complexity:
 
-The space required for the result list and the recursion call stack both contribute to the space complexity.
-The total space complexity is:
+The total space complexity is the sum of the space used for the result list and the recursive call stack:
+scss
+Copy
+Edit
 O(n) + O(n) = O(n)
-(since the space used by the recursive call stack and the result list is proportional to n).
 Summary:
-
 Time Complexity:
-O(2^n), because there are 2^n possible subsequences and each subsequence takes constant time to form and print.
+O(2^n) because there are 2^n subsequences, and each subsequence takes constant time to form and print.
+
 Space Complexity:
-O(n), because we need space for the result list (up to n elements) and the recursion call stack (up to n calls).
+O(n) due to the space required for the result list and the recursive call stack.
